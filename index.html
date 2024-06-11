@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Location</title>
+</head>
+<body>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid #777;
+      padding: 2px;
+      box-sizing: border-box;
+      height: 38px;
+      position: relative;
+    }
+    .popover-location {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      margin-top: 4px;
+      border: 1px solid;
+      padding: 2px;
+      display: none;
+    }
+    .list-location {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .item-location {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid;
+      padding: 2px;
+    }
+    .input-location {
+      width: 100%;
+      box-sizing: border-box;
+      outline: none;
+      height: 32px;
+    }
+    .search-location {
+      flex: 1;
+    }
+    .action-location {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .icon-location {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .delimiter-location {
+      width: 1px;
+      background-color: #777;
+      height: 14px;
+    }
+  </style>
+
+  <div class="location">
+    <div class="list-location js-list-location">
+      <div class="item-location">
+        <span>Famagusta</span>
+        <span class="icon-location">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.70711 3.29289C4.31658 2.90237 3.68342 2.90237 3.29289 3.29289C2.90237 3.68342 2.90237 4.31658 3.29289 4.70711L5.76777 7.18198C6.15829 7.5725 6.15829 8.20567 5.76777 8.59619L3.29289 11.0711C2.90237 11.4616 2.90237 12.0948 3.29289 12.4853C3.68342 12.8758 4.31658 12.8758 4.70711 12.4853L7.18198 10.0104C7.5725 9.61988 8.20567 9.61988 8.59619 10.0104L11.0711 12.4853C11.4616 12.8758 12.0948 12.8758 12.4853 12.4853C12.8758 12.0948 12.8758 11.4616 12.4853 11.0711L10.0104 8.59619C9.61988 8.20567 9.61988 7.5725 10.0104 7.18198L12.4853 4.70711C12.8758 4.31658 12.8758 3.68342 12.4853 3.29289C12.0948 2.90237 11.4616 2.90237 11.0711 3.29289L8.59619 5.76777C8.20567 6.15829 7.5725 6.15829 7.18198 5.76777L4.70711 3.29289Z" fill="#777777"/>
+          </svg>
+        </span>
+      </div>
+      <div class="item-location">
+        <span>Paralimni</span>
+        <span class="icon-location">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.70711 3.29289C4.31658 2.90237 3.68342 2.90237 3.29289 3.29289C2.90237 3.68342 2.90237 4.31658 3.29289 4.70711L5.76777 7.18198C6.15829 7.5725 6.15829 8.20567 5.76777 8.59619L3.29289 11.0711C2.90237 11.4616 2.90237 12.0948 3.29289 12.4853C3.68342 12.8758 4.31658 12.8758 4.70711 12.4853L7.18198 10.0104C7.5725 9.61988 8.20567 9.61988 8.59619 10.0104L11.0711 12.4853C11.4616 12.8758 12.0948 12.8758 12.4853 12.4853C12.8758 12.0948 12.8758 11.4616 12.4853 11.0711L10.0104 8.59619C9.61988 8.20567 9.61988 7.5725 10.0104 7.18198L12.4853 4.70711C12.8758 4.31658 12.8758 3.68342 12.4853 3.29289C12.0948 2.90237 11.4616 2.90237 11.0711 3.29289L8.59619 5.76777C8.20567 6.15829 7.5725 6.15829 7.18198 5.76777L4.70711 3.29289Z" fill="#777777"/>
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div class="search-location">
+      <input class="input-location js-input-location" />
+    </div>
+    <div class="action-location">
+      <div class="icon-location">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.70711 3.29289C4.31658 2.90237 3.68342 2.90237 3.29289 3.29289C2.90237 3.68342 2.90237 4.31658 3.29289 4.70711L5.76777 7.18198C6.15829 7.5725 6.15829 8.20567 5.76777 8.59619L3.29289 11.0711C2.90237 11.4616 2.90237 12.0948 3.29289 12.4853C3.68342 12.8758 4.31658 12.8758 4.70711 12.4853L7.18198 10.0104C7.5725 9.61988 8.20567 9.61988 8.59619 10.0104L11.0711 12.4853C11.4616 12.8758 12.0948 12.8758 12.4853 12.4853C12.8758 12.0948 12.8758 11.4616 12.4853 11.0711L10.0104 8.59619C9.61988 8.20567 9.61988 7.5725 10.0104 7.18198L12.4853 4.70711C12.8758 4.31658 12.8758 3.68342 12.4853 3.29289C12.0948 2.90237 11.4616 2.90237 11.0711 3.29289L8.59619 5.76777C8.20567 6.15829 7.5725 6.15829 7.18198 5.76777L4.70711 3.29289Z" fill="#777777"/>
+        </svg>
+      </div>
+      <div class="delimiter-location"></div>
+      <div class="icon-location">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.74584 5.31686C4.34645 4.89438 3.69892 4.89438 3.29954 5.31686C2.90015 5.73933 2.90015 6.4243 3.29954 6.84677L6.67832 10.4209C7.40826 11.193 8.59174 11.193 9.32169 10.4209L12.7005 6.84677C13.0998 6.42429 13.0998 5.73933 12.7005 5.31686C12.3011 4.89438 11.6535 4.89438 11.2542 5.31686L9.32169 7.36106C8 8.5 8 8.5 6.67831 7.36106L4.74584 5.31686Z" fill="#777777"/>
+        </svg>
+      </div>
+    </div>
+    <div class="popover-location js-popover-location"></div>
+  </div>
+
+  <script>
+    var locations = {
+      l1: [{"id":8,"name":"Famagusta","slug":"ammochostos-district","parent_id":null,"is_final":false,"level":1,"display_name":"Famagusta","coordinates":{"lat":35.032496,"lng":33.903682}},{"id":10,"name":"Larnaca","slug":"larnaka-district-larnaca","parent_id":null,"is_final":false,"level":1,"display_name":"Larnaca","coordinates":{"lat":34.902932,"lng":33.626676}},{"id":12,"name":"Limassol","slug":"lemesos-district-limassol","parent_id":null,"is_final":false,"level":1,"display_name":"Limassol","coordinates":{"lat":34.706962,"lng":33.022328}},{"id":11,"name":"Nicosia","slug":"lefkosia-district-nicosia","parent_id":null,"is_final":false,"level":1,"display_name":"Nicosia","coordinates":{"lat":35.183955,"lng":33.377947}},{"id":13,"name":"Paphos","slug":"pafos-district-paphos","parent_id":null,"is_final":true,"level":1,"display_name":"Paphos","coordinates":{"lat":34.773899,"lng":32.430527}}],
+      l2: [{"id":5756,"name":"Achna","slug":"achna","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Achna","coordinates":{"lat":35.0388109,"lng":33.7910458}},{"id":5721,"name":"Agia Napa","slug":"agia-napa","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Agia Napa","coordinates":{"lat":34.9856395,"lng":33.9749189}},{"id":5722,"name":"Agia Thekla","slug":"agia-thekla","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Agia Thekla","coordinates":{"lat":34.9790498,"lng":33.9251563}},{"id":5720,"name":"Agia Triada","slug":"agia-triada","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Agia Triada","coordinates":{"lat":35.0501584,"lng":34.0020218}},{"id":5760,"name":"Agia Zoni","slug":"agia-zoni","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Agia Zoni","coordinates":{"lat":35.1082101,"lng":33.949893}},{"id":5823,"name":"Akropolis","slug":"akropolis-famagusta","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Akropolis","coordinates":{"lat":35.097469,"lng":33.950407}},{"id":5717,"name":"Avgorou","slug":"avgorou","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Avgorou","coordinates":{"lat":35.0179768,"lng":33.8505626}},{"id":5723,"name":"Cape Greko","slug":"cape-greko","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Cape Greko","coordinates":{"lat":34.9819763,"lng":34.0243501}},{"id":5827,"name":"Chrysospiliotissa","slug":"chrysospiliotissa","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Chrysospiliotissa","coordinates":{"lat":35.10751,"lng":33.925474}},{"id":5724,"name":"Deryneia","slug":"deryneia","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Deryneia","coordinates":{"lat":35.083295,"lng":33.8986046}},{"id":5719,"name":"Frenaros","slug":"frenaros","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Frenaros","coordinates":{"lat":35.0544925,"lng":33.8862185}},{"id":5725,"name":"Kapparis","slug":"kapparis","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Kapparis","coordinates":{"lat":35.0596151,"lng":34.0069771}},{"id":5753,"name":"Kokkinogremos","slug":"kokkinogremos","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Kokkinogremos","coordinates":{"lat":35.0292072,"lng":33.9840081}},{"id":5754,"name":"Konnos","slug":"konnos","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Konnos","coordinates":{"lat":34.9844107,"lng":34.0677699}},{"id":5718,"name":"Liopetri","slug":"liopetri","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Liopetri","coordinates":{"lat":35.0003285,"lng":33.8565208}},{"id":5729,"name":"Paralimni","slug":"paralimni","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Paralimni","coordinates":{"lat":35.0358446,"lng":33.9615927}},{"id":5726,"name":"Pernera","slug":"pernera","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Pernera","coordinates":{"lat":35.0351019,"lng":34.0292553}},{"id":5755,"name":"Profitis Elias","slug":"profitis-Elias","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Profitis Elias","coordinates":{"lat":35.0182448,"lng":34.038998}},{"id":5727,"name":"Protaras","slug":"protaras","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Protaras","coordinates":{"lat":35.0040454,"lng":33.9724301}},{"id":5728,"name":"Sotira","slug":"sotira","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Sotira","coordinates":{"lat":35.0082328,"lng":33.8974781}},{"id":5757,"name":"Vrysoulles","slug":"vrysoulles","parent_id":8,"is_final":true,"level":2,"display_name":"Famagusta — Vrysoulles","coordinates":{"lat":35.0651541,"lng":33.8685116}}],
+      l3: [{"id":5504,"name":"Agia Anna","slug":"agia-anna","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Agia Anna","coordinates":{"lat":34.924648,"lng":33.484451}},{"id":5298,"name":"Agioi Vavatsinias","slug":"agioi-vavatsinias","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Agioi Vavatsinias","coordinates":{"lat":34.866421,"lng":33.179878}},{"id":5659,"name":"Agios Theodoros","slug":"agios-theodoros-larnakas","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Agios Theodoros","coordinates":{"lat":34.781255,"lng":33.40791}},{"id":5257,"name":"Alaminos","slug":"alaminos","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Alaminos","coordinates":{"lat":34.78257,"lng":33.440971}},{"id":5332,"name":"Alethriko","slug":"alethriko","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Alethriko","coordinates":{"lat":34.862511,"lng":33.5}},{"id":5625,"name":"Anafotida","slug":"anafotida","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Anafotida","coordinates":{"lat":34.807739,"lng":33.45974}},{"id":5348,"name":"Anglikos Stratos Dekeleias","slug":"anglikos-stratos-dekeleias","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Anglikos Stratos Dekeleias","coordinates":{"lat":34.98167,"lng":33.737801}},{"id":5097,"name":"Anglisides","slug":"anglisides","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Anglisides","coordinates":{"lat":34.86047,"lng":33.44165}},{"id":5225,"name":"Aplanta","slug":"aplanta","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Aplanta","coordinates":{"lat":34.809269,"lng":33.484692}},{"id":5768,"name":"Aradippou - Agios Fanourios","slug":"aradippou-agios-fanourios","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Aradippou - Agios Fanourios","coordinates":{"lat":34.94434,"lng":33.594}},{"id":5408,"name":"Aradippou - Apostolos Loukas","slug":"aradippou-apostolos-loukas2","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Aradippou - Apostolos Loukas","coordinates":{"lat":34.917438,"lng":33.605027}},{"id":5767,"name":"Aradippou - Vlachos","slug":"aradippou-vlachos","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Aradippou - Vlachos","coordinates":{"lat":34.91249,"lng":33.584}},{"id":5521,"name":"Arsos Larnakas","slug":"arsos-larnakas","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Arsos Larnakas","coordinates":{"lat":35.076031,"lng":33.637402}},{"id":5338,"name":"Athienou","slug":"athienou","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Athienou","coordinates":{"lat":35.053108,"lng":33.55624}},{"id":5387,"name":"Avdellero","slug":"avdellero","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Avdellero","coordinates":{"lat":34.999321,"lng":33.564541}},{"id":5183,"name":"Choirokoitia","slug":"choirokoitia","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Choirokoitia","coordinates":{"lat":34.83725,"lng":33.348282}},{"id":5677,"name":"Dekeleia","slug":"dekeleia","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Dekeleia","coordinates":{"lat":34.983333,"lng":33.725}},{"id":5573,"name":"Delikipos","slug":"delikipos","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Delikipos","coordinates":{"lat":34.905861,"lng":33.362099}},{"id":5530,"name":"Dromolaxia","slug":"dromolaxia","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Dromolaxia","coordinates":{"lat":34.898071,"lng":33.621159}},{"id":5836,"name":"Drosia","slug":"drosia","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Drosia","coordinates":{"lat":34.91222,"lng":33.61543}},{"id":5133,"name":"Drys Kato","slug":"drys-kato","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Drys Kato","coordinates":{"lat":34.860909,"lng":33.28561}},{"id":5511,"name":"Kalavasos","slug":"kalavasos","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Kalavasos","coordinates":{"lat":34.76688,"lng":33.286579}},{"id":5279,"name":"Kalo Chorio","slug":"kalo-chorio-larnakas","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Kalo Chorio","coordinates":{"lat":34.91864,"lng":33.534191}},{"id":5260,"name":"Kellia","slug":"kellia","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Kellia","coordinates":{"lat":34.956249,"lng":33.610909}},{"id":5391,"name":"Kiti","slug":"kiti","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Kiti","coordinates":{"lat":34.870731,"lng":33.584969}},{"id":5505,"name":"Kivisili","slug":"kivisili","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Kivisili","coordinates":{"lat":34.822399,"lng":33.498089}},{"id":5633,"name":"Klavdia","slug":"klavdia","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Klavdia","coordinates":{"lat":34.88448,"lng":33.506809}},{"id":5566,"name":"Kofinou","slug":"kofinou","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Kofinou","coordinates":{"lat":34.83099,"lng":33.395351}},{"id":5679,"name":"Kornos","slug":"kornos","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Kornos","coordinates":{"lat":34.907169,"lng":33.406368}},{"id":5076,"name":"Kosi","slug":"kosi","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Kosi","coordinates":{"lat":35.060398,"lng":33.616199}},{"id":5381,"name":"Lageia","slug":"lageia","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Lageia","coordinates":{"lat":34.83889,"lng":33.236599}},{"id":5732,"name":"Larnaka - Agioi Anargyroi I","slug":"larnaka-agioi-anargyroi-i","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Larnaka - Agioi Anargyroi I","coordinates":{"lat":34.9304828,"lng":33.6215744}},{"id":5815,"name":"Larnaka - Agioi Anargyroi II","slug":"larnaka-agioi-anargyroi-ii","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Larnaka - Agioi Anargyroi II","coordinates":{"lat":34.9304828,"lng":33.6215744}},{"id":5772,"name":"Larnaka - Agios Nikolaos","slug":"larnaka-agios-nikolaos","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Larnaka - Agios Nikolaos","coordinates":{"lat":34.917181,"lng":33.61144}},{"id":5771,"name":"Larnaka - Arch Makarios III","slug":"larnaka-arch-makariosIII","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Larnaka - Arch Makarios III","coordinates":{"lat":34.924091,"lng":33.63673}},{"id":5776,"name":"Larnaka - Chrysopolitissa","slug":"larnaka-chrysopolitissa","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Larnaka - Chrysopolitissa","coordinates":{"lat":34.922319,"lng":33.628563}},{"id":5733,"name":"Larnaka - Finikoudes","slug":"larnaka-finikoudes","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Larnaka - Finikoudes","coordinates":{"lat":34.913442,"lng":33.6365613}},{"id":5734,"name":"Larnaka - Harbor","slug":"larnaka-harbor","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Larnaka - Harbor","coordinates":{"lat":34.921428,"lng":33.6357537}},{"id":5735,"name":"Larnaka - Kamares","slug":"larnaka-kamares","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Larnaka - Kamares","coordinates":{"lat":34.9073458,"lng":33.5996035}},{"id":5774,"name":"Larnaka - Kokkines","slug":"larnaka-kokkines","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Larnaka - Kokkines","coordinates":{"lat":34.93787,"lng":33.617639}},{"id":5736,"name":"Larnaka - Makenzy","slug":"larnaka-makenzy","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Larnaka - Makenzy","coordinates":{"lat":34.8911836,"lng":33.6383531}},{"id":5770,"name":"Larnaka - Skala","slug":"larnaka-skala","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Larnaka - Skala","coordinates":{"lat":34.904164,"lng":33.63313}},{"id":5545,"name":"Larnaka - Sotiros","slug":"larnaka-sotiros","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Larnaka - Sotiros","coordinates":{"lat":34.948272,"lng":33.608694}},{"id":5773,"name":"Larnaka - Tsakilero","slug":"larnaka-tsakilero","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Larnaka - Tsakilero","coordinates":{"lat":34.93354,"lng":33.610846}},{"id":5622,"name":"Lefkara Kato","slug":"lefkara-kato","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Lefkara Kato","coordinates":{"lat":34.845219,"lng":33.3297}},{"id":5674,"name":"Lefkara Pano","slug":"lefkara-pano","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Lefkara Pano","coordinates":{"lat":34.897991,"lng":33.338699}},{"id":5503,"name":"Livadia Larnakas","slug":"livadia-larnakas","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Livadia Larnakas","coordinates":{"lat":34.9548,"lng":33.637825}},{"id":5288,"name":"Mari","slug":"mari","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Mari","coordinates":{"lat":34.73246,"lng":33.29493}},{"id":5516,"name":"Maroni","slug":"maroni","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Maroni","coordinates":{"lat":34.75425,"lng":33.372108}},{"id":5585,"name":"Mazotos","slug":"mazotos","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Mazotos","coordinates":{"lat":34.811668,"lng":33.526218}},{"id":5077,"name":"Melini","slug":"melini","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Melini","coordinates":{"lat":34.88155,"lng":33.20187}},{"id":5075,"name":"Melouseia","slug":"melouseia","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Melouseia","coordinates":{"lat":35.065971,"lng":33.579941}},{"id":5369,"name":"Meneou","slug":"meneou","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Meneou","coordinates":{"lat":34.84705,"lng":33.618229}},{"id":5096,"name":"Menogeia","slug":"menogeia","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Menogeia","coordinates":{"lat":34.845821,"lng":33.42342}},{"id":5082,"name":"Mosfiloti","slug":"mosfiloti","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Mosfiloti","coordinates":{"lat":34.951199,"lng":33.427181}},{"id":5444,"name":"Odou","slug":"odou","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Odou","coordinates":{"lat":34.878551,"lng":33.147919}},{"id":5268,"name":"Ora","slug":"ora","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Ora","coordinates":{"lat":34.850281,"lng":33.207161}},{"id":5106,"name":"Ormideia","slug":"ormideia","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Ormideia","coordinates":{"lat":34.990318,"lng":33.811821}},{"id":5497,"name":"Oroklini","slug":"voroklini","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Oroklini","coordinates":{"lat":34.984117,"lng":33.657149}},{"id":5417,"name":"Oroklini Tourist Area","slug":"voroklini-tourist-area","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Oroklini Tourist Area","coordinates":{"lat":34.974495,"lng":33.672334}},{"id":5269,"name":"Pergamos","slug":"pergamos","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Pergamos","coordinates":{"lat":35.047798,"lng":33.706581}},{"id":5144,"name":"Perivolia Larnakas","slug":"perivolia-larnakas","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Perivolia Larnakas","coordinates":{"lat":34.823929,"lng":33.581581}},{"id":5226,"name":"Petrofani","slug":"petrofani","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Petrofani","coordinates":{"lat":35.0438,"lng":33.51326}},{"id":5409,"name":"Psematismenos","slug":"psematismenos","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Psematismenos","coordinates":{"lat":34.771301,"lng":33.349682}},{"id":5113,"name":"Psevdas","slug":"psevdas","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Psevdas","coordinates":{"lat":34.951351,"lng":33.47295}},{"id":5147,"name":"Pyla","slug":"pyla","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Pyla","coordinates":{"lat":35.014599,"lng":33.675701}},{"id":5655,"name":"Pyla Tourist Area","slug":"pyla-touristiki-periochi","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Pyla Tourist Area","coordinates":{"lat":35.016689,"lng":33.68832}},{"id":5327,"name":"Pyrga Larnakas","slug":"pyrga-larnakas","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Pyrga Larnakas","coordinates":{"lat":34.901255,"lng":33.437892}},{"id":5088,"name":"Skarinou","slug":"skarinou","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Skarinou","coordinates":{"lat":34.81488,"lng":33.334579}},{"id":5039,"name":"Softades","slug":"softades","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Softades","coordinates":{"lat":34.903259,"lng":33.560871}},{"id":5611,"name":"Stathmos Skarinou","slug":"stathmos-skarinou","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Stathmos Skarinou","coordinates":{"lat":34.805359,"lng":33.360229}},{"id":5555,"name":"Tersefanou","slug":"tersefanou","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Tersefanou","coordinates":{"lat":34.84753,"lng":33.546581}},{"id":5596,"name":"Tochni","slug":"tochni","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Tochni","coordinates":{"lat":34.789959,"lng":33.319469}},{"id":5413,"name":"Tremetousia","slug":"tremetousia","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Tremetousia","coordinates":{"lat":35.087311,"lng":33.601601}},{"id":5109,"name":"Troulloi","slug":"troulloi","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Troulloi","coordinates":{"lat":35.02993,"lng":33.615341}},{"id":5168,"name":"Vasiliko","slug":"vasiliko","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Vasiliko","coordinates":{"lat":34.733292,"lng":33.31485}},{"id":5263,"name":"Vavatsinia","slug":"vavatsinia","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Vavatsinia","coordinates":{"lat":34.87822,"lng":33.241879}},{"id":5397,"name":"Vavla","slug":"vavla","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Vavla","coordinates":{"lat":34.8479,"lng":33.275028}},{"id":5179,"name":"Xylofagou","slug":"xylofagou","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Xylofagou","coordinates":{"lat":34.967918,"lng":33.868938}},{"id":5657,"name":"Xylotymvou","slug":"xylotymvou","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Xylotymvou","coordinates":{"lat":35.006821,"lng":33.751068}},{"id":5524,"name":"Zygi","slug":"zygi","parent_id":10,"is_final":true,"level":2,"display_name":"Larnaca — Zygi","coordinates":{"lat":34.73481,"lng":33.342621}}]
+    };
+    var selectedLocations = [];
+    var currentLocation = locations.l1;
+
+    function renderLocations() {
+      document.querySelector('.js-list-location').innerHTML = '';
+      selectedLocations.forEach((item, index) => {
+        var element = document.createElement('div')
+        element.innerHTML = `
+          <div class="item-location">
+            <span>${item.name}</span>
+            <span class="icon-location" onclick="deleteLocation(event, ${index})">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.70711 3.29289C4.31658 2.90237 3.68342 2.90237 3.29289 3.29289C2.90237 3.68342 2.90237 4.31658 3.29289 4.70711L5.76777 7.18198C6.15829 7.5725 6.15829 8.20567 5.76777 8.59619L3.29289 11.0711C2.90237 11.4616 2.90237 12.0948 3.29289 12.4853C3.68342 12.8758 4.31658 12.8758 4.70711 12.4853L7.18198 10.0104C7.5725 9.61988 8.20567 9.61988 8.59619 10.0104L11.0711 12.4853C11.4616 12.8758 12.0948 12.8758 12.4853 12.4853C12.8758 12.0948 12.8758 11.4616 12.4853 11.0711L10.0104 8.59619C9.61988 8.20567 9.61988 7.5725 10.0104 7.18198L12.4853 4.70711C12.8758 4.31658 12.8758 3.68342 12.4853 3.29289C12.0948 2.90237 11.4616 2.90237 11.0711 3.29289L8.59619 5.76777C8.20567 6.15829 7.5725 6.15829 7.18198 5.76777L4.70711 3.29289Z" fill="#777777"/>
+              </svg>
+            </span>
+          </div>
+        `;
+        document.querySelector('.js-list-location').appendChild(element);
+      })
+    }
+
+    function renderPopover() {
+      var text = document.querySelector('.js-input-location').value
+      document.querySelector('.js-popover-location').innerHTML = '';
+      if (!currentLocation.length) {
+        document.querySelector('.js-popover-location').style.display = 'none';
+        return;
+      }
+      currentLocation.filter((item) => !text || item.name.toUpperCase().includes(text.toUpperCase())).forEach((item) => {
+        var element = document.createElement('div')
+        element.innerHTML = item.name;
+        element.onclick = function(event) {
+          event.stopPropagation();
+          selectedLocations.push(item);
+          document.querySelector('.js-input-location').value = ''
+          renderLocations();
+          if (locations[`l${selectedLocations.length + 1}`]) {
+            currentLocation = locations[`l${selectedLocations.length + 1}`];
+          } else {
+            currentLocation = [];
+          }
+          renderPopover();
+          document.querySelector('.js-input-location').focus()
+        }
+        document.querySelector('.js-popover-location').appendChild(element);
+      })
+      document.querySelector('.js-popover-location').style.display = 'block';
+    }
+
+    function deleteLocation(event, index) {
+      event.stopPropagation()
+      selectedLocations = selectedLocations.slice(0, index)
+      renderLocations();
+      currentLocation = locations[`l${selectedLocations.length + 1}`];
+      renderPopover();
+      document.querySelector('.js-input-location').focus();
+    }
+
+    document.querySelector('.js-input-location').addEventListener('click', (event) => {
+      event.stopPropagation();
+    })
+    document.querySelector('.js-input-location').addEventListener('input', (event) => {
+      event.stopPropagation();
+      renderPopover();
+    })
+    document.querySelector('.js-input-location').addEventListener('focus', (event) => {
+      event.stopPropagation();
+      renderPopover();
+    })
+    document.body.addEventListener('click', () => {
+      console.log('click')
+      document.querySelector('.js-popover-location').style.display = 'none';
+    })
+    renderLocations()
+  </script>
+</body>
+</html>
